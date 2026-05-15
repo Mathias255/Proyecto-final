@@ -6,7 +6,9 @@ class Producto(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     precio = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, default=0)
-    categoria_id = db.Column(db.Integer, db.ForeignKey('categorias.id'))
+    
+    # CLAVE FORÁNEA: Conecta con la tabla categorías
+    categoria_id = db.Column(db.Integer, db.ForeignKey('categorias.id'), nullable=True)
 
     def to_dict(self):
         return {
@@ -14,5 +16,5 @@ class Producto(db.Model):
             "nombre": self.nombre,
             "precio": self.precio,
             "stock": self.stock,
-            "categoria_id": self.categoria_id
+            "categoria": self.categoria_asociada.nombre if self.categoria_asociada else "Sin categoría"
         }

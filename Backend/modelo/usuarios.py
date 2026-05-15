@@ -5,7 +5,15 @@ class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False) # En producción usar Hash
+    password = db.Column(db.String(255), nullable=False) # Obligatorio
+    
+    # Relación con órdenes (opcional pero recomendada)
+    ordenes = db.relationship('Orden', backref='cliente', lazy=True)
 
     def to_dict(self):
-        return {"id": self.id, "nombre": self.nombre, "email": self.email}
+        return {
+            "id": self.id,
+            "nombre": self.nombre,
+            "email": self.email
+            # No devolvemos el password por seguridad
+        }
