@@ -1,0 +1,121 @@
+.factura-container {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #050505;
+  min-height: 90vh;
+}
+
+.factura-box {
+  background-color: #0c0c0e;
+  border: 1px solid #1c1e22;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 180, 255, 0.05);
+}
+
+.factura-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.header-main h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.invoice-number { color: #555; font-size: 0.8rem; margin-top: 5px; }
+
+.logo-factura { color: #ffffff; font-weight: bold; font-size: 1.1rem; }
+.logo-factura span { color: #00b4ff; text-shadow: 0 0 10px #00b4ff; }
+
+.divider-dashed {
+  border-top: 2px dashed #1c1e22;
+  margin: 20px 0;
+}
+
+.factura-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 0.85rem;
+}
+
+.info-col span { color: #00b4ff; display: block; margin-bottom: 5px; }
+.info-col p { color: #8b949e; margin: 2px 0; }
+
+.factura-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.factura-table th {
+  text-align: left;
+  color: #555;
+  font-size: 0.75rem;
+  padding: 10px 5px;
+  border-bottom: 1px solid #1c1e22;
+}
+
+.factura-table td {
+  padding: 15px 5px;
+  color: #c9d1d9;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #0a0a0a;
+}
+
+.cyan-text { color: #00b4ff; font-weight: bold; }
+
+.factura-footer { margin-top: 20px; }
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 180, 255, 0.05);
+  padding: 20px;
+  border: 1px solid #00b4ff33;
+}
+
+.final-price { color: #00b4ff; font-size: 1.8rem; font-weight: bold; }
+
+.digital-sign {
+  margin-top: 30px;
+  text-align: center;
+  color: #333;
+}
+
+.barcode { font-size: 1.2rem; letter-spacing: 2px; margin-top: 10px; }
+
+.factura-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-confirmar {
+  flex: 2;
+  background: #00b4ff;
+  color: #000;
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  flex: 1;
+  background: transparent;
+  border: 1px solid #333;
+  color: #8b949e;
+  padding: 15px;
+  cursor: pointer;
+}

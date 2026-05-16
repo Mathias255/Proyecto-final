@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-
-// Importamos los componentes basándonos en tus pestañas abiertas
-import { InicioComponent } from './inicio/inicio'; 
-import { ProductosComponent } from './productos/productos';
-import { RegistroComponent } from './registro/registro';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router'; // <-- Crítico
+import { CarritoService } from './services/carrito';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './app.html', 
-  styleUrl: './app.css' // Asegúrate de que sea .css y no .scss
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    RouterLink,       // <-- Asegúrate de que esté escrito aquí
+    RouterLinkActive  // <-- Asegúrate de que esté escrito aquí
+  ],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App { 
+export class App implements OnInit {
   title = 'TiendaFrontend';
+  contadorCarrito: number = 0;
+
+  constructor(private carritoService: CarritoService) {}
+
+  ngOnInit() {
+    this.carritoService.carrito$.subscribe(() => {
+      this.contadorCarrito = this.carritoService.obtenerTotalContador();
+    });
+  }
 }

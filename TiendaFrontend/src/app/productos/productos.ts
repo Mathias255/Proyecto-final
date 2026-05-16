@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductoService } from '../services/producto'; 
+import { CarritoService } from '../services/carrito'; // Sube un nivel y entra a services/carrito
 
 @Component({
   selector: 'app-productos',
@@ -14,7 +15,10 @@ export class ProductosComponent implements OnInit {
   productosFiltrados: any[] = [];
   categoriaActual: string = 'Todos';
 
-  constructor(private productoService: ProductoService) {}
+  constructor(
+    private productoService: ProductoService,
+    private carritoService: CarritoService // Inyección del servicio del carrito
+  ) {}
 
   ngOnInit(): void {
     this.cargarProductos();
@@ -39,7 +43,8 @@ export class ProductosComponent implements OnInit {
     }
   }
 
-  adquirir(nombre: string) {
-    alert(`Protocolo de adquisición iniciado: ${nombre}\nSincronizando con el carrito de Nanobot...`);
+  // Ejecuta la función del servicio enviando el producto seleccionado
+  adquirir(producto: any) {
+    this.carritoService.agregarProducto(producto);
   }
 }

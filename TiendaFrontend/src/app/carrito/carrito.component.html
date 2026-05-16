@@ -1,0 +1,63 @@
+<div class="factura-container">
+  <div class="factura-box">
+    <div class="factura-header">
+      <div class="header-main">
+        <h1>RECIBO DE ADQUISICIÓN</h1>
+        <p class="invoice-number">REF: NB-{{ fechaActual | date:'yyyyMMdd' }}-{{ (totalPrecio | number:'1.0-0') }}</p>
+      </div>
+      <div class="logo-factura">NANOBOT <span>SYSTEMS</span></div>
+    </div>
+
+    <div class="divider-dashed"></div>
+
+    <div class="factura-info">
+      <div class="info-col">
+        <span>EMISOR:</span>
+        <p>TERMINAL_CENTRAL_QUITO</p>
+        <p>RED_NANO_EUC</p>
+      </div>
+      <div class="info-col">
+        <span>FECHA_ESTELAR:</span>
+        <p>{{ fechaActual | date:'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+    </div>
+
+    <table class="factura-table">
+      <thead>
+        <tr>
+          <th>DESCRIPCIÓN_HARDWARE</th>
+          <th>CANT.</th>
+          <th>PRECIO</th>
+          <th>SUBTOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>${{ item.precio }}</td>
+          <td class="cyan-text">${{ item.precio * item.cantidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="divider-dashed"></div>
+
+    <div class="factura-footer">
+      <div class="total-row">
+        <span>CRÉDITOS TOTALES A TRANSFERIR:</span>
+        <span class="final-price">${{ totalPrecio }}</span>
+      </div>
+      
+      <div class="digital-sign">
+        <p>// FIRMA_DIGITAL_VERIFICADA_POR_NANOBOT_OS</p>
+        <div class="barcode">|||| || ||||| ||| || |||| || |||</div>
+      </div>
+    </div>
+
+    <div class="factura-actions">
+      <button class="btn-confirmar" (click)="confirmar()">CONFIRMAR TRANSFERENCIA</button>
+      <button class="btn-cancelar" routerLink="/productos">VOLVER AL INVENTARIO</button>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <nav class="navbar">
-  <div class="logo">
+  <div class="logo" routerLink="/inicio" style="cursor: pointer;">
     NANOBOT <span class="cyan">SYSTEMS</span>
   </div>
   
@@ -7,6 +7,11 @@
     <a routerLink="/inicio" routerLinkActive="active">Inicio</a>
     <a routerLink="/productos" routerLinkActive="active">Productos</a>
     <a routerLink="/registro" routerLinkActive="active">Registro</a>
+    
+    <div class="cart-nav-box" routerLink="/carrito">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-badge" *ngIf="contadorCarrito > 0">{{ contadorCarrito }}</span>
+    </div>
   </div>
 </nav>
 
