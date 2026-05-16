@@ -1,0 +1,110 @@
+/* Contenedor con suavizado de renderizado para mayor nitidez */
+.shop-container { 
+  padding: 40px 5%; 
+  background: #050505; 
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.filter-bar { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+
+.filter-bar button {
+  background: #0d0d0d; 
+  border: 1px solid #222; 
+  color: #a0a0a0;
+  padding: 10px 20px; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.filter-bar button:hover {
+  border-color: #00b4ff;
+  color: #ffffff;
+}
+
+.filter-bar button.active { 
+  background: rgba(0, 180, 255, 0.05);
+  border-color: #00b4ff; 
+  color: #00b4ff; 
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.3); 
+}
+
+/* Título ultra nítido con brillo sutil */
+.neon-title { 
+  color: #00b4ff; 
+  text-shadow: 0 0 8px rgba(0, 180, 255, 0.6); 
+  margin-bottom: 40px; 
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.grid-productos {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 30px;
+}
+
+/* Tarjeta optimizada: fondo sólido premium y bordes definidos */
+.nano-card {
+  background: #0c0c0e; 
+  border: 1px solid #1c1e22; 
+  padding: 30px 25px;
+  position: relative; 
+  overflow: hidden; 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto de enfoque nítido al pasar el mouse */
+.nano-card:hover { 
+  border-color: #00b4ff; 
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 180, 255, 0.15);
+}
+
+.product-info h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Precio ultra brillante para destacar */
+.price { 
+  color: #00b4ff; 
+  font-size: 2rem; 
+  font-weight: 800; 
+  margin-bottom: 25px; 
+  text-shadow: 0 0 10px rgba(0, 180, 255, 0.2);
+}
+
+/* Barra de stock limpia */
+.stock-bar { width: 100%; height: 3px; background: #1a1d24; margin-bottom: 8px; }
+.fill { height: 100%; background: #00b4ff; }
+.stock-text { font-size: 0.75rem; color: #6e7681; font-weight: 600; letter-spacing: 0.5px; margin: 0; }
+
+/* Botón estilizado con tipografía clara */
+.btn-glitch {
+  width: 100%; 
+  padding: 14px; 
+  margin-top: 25px; 
+  background: transparent;
+  border: 1px solid #222; 
+  color: #ffffff; 
+  cursor: pointer; 
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-glitch:hover { 
+  background: #00b4ff; 
+  border-color: #00b4ff;
+  color: #000000; 
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.4);
+}

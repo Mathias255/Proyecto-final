@@ -1,0 +1,233 @@
+/* Contenedor general */
+.inicio-container {
+  background-color: #050505;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.glow-text {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px #00b4ff;
+  margin-bottom: 10px;
+}
+
+.slogan-text {
+  font-size: 1.4rem;
+  color: #c9d1d9;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.cyan {
+  color: #00b4ff;
+}
+
+.subtitle {
+  color: #8b949e;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 35px auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #00b4ff;
+  color: #000000;
+  border: none;
+  padding: 14px 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 15px #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #00b4ff;
+  border: 1px solid #00b4ff;
+  padding: 14px 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn-outline:hover {
+  background-color: rgba(0, 180, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.3);
+}
+
+/* --- ABOUT SECTION (NUEVA) --- */
+.about-section {
+  padding: 80px 8%;
+  background: linear-gradient(180deg, #050505 0%, #0d1117 100%);
+  border-top: 1px solid #1f242c;
+}
+
+.about-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text-block {
+  flex: 2;
+}
+
+.about-text-block p {
+  color: #c9d1d9;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.about-badge {
+  flex: 1;
+  background: #161b22;
+  border: 2px dashed #00b4ff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.05);
+}
+
+.core-nucleus {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #00b4ff;
+  text-shadow: 0 0 15px #00b4ff;
+  margin-bottom: 10px;
+}
+
+.about-badge p {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #8b949e;
+  margin: 0;
+}
+
+/* --- INFO SECTION --- */
+.info-section {
+  padding: 80px 5%;
+  background-color: #0a0a0a;
+  border-top: 1px solid #161b22;
+  border-bottom: 1px solid #161b22;
+}
+
+.section-title {
+  color: #00b4ff;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  padding: 35px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: #00b4ff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 180, 255, 0.1);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.info-card p {
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- STATS SECTION --- */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 5%;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.stat-label {
+  color: #00b4ff;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-badge {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .glow-text { font-size: 2.5rem; }
+  .slogan-text { font-size: 1.1rem; }
+  .stats-section { flex-direction: column; }
+}

@@ -1,0 +1,35 @@
+<div class="shop-container">
+  <div class="filter-bar">
+    <button (click)="filtrar('Todos')" [class.active]="categoriaActual === 'Todos'">TODOS</button>
+    <button (click)="filtrar('Procesadores')" [class.active]="categoriaActual === 'Procesadores'">PROCESADORES</button>
+    <button (click)="filtrar('Tarjetas de Video')" [class.active]="categoriaActual === 'Tarjetas de Video'">GPUs</button>
+    <button (click)="filtrar('Memorias RAM')" [class.active]="categoriaActual === 'Memorias RAM'">RAM</button>
+  </div>
+
+  <h2 class="neon-title">// HARDWARE_VAULT: {{ categoriaActual | uppercase }}</h2>
+
+  <div class="grid-productos">
+    <div class="nano-card" *ngFor="let p of productosFiltrados">
+      <div class="scan-line"></div>
+      
+      <div class="product-info">
+        <h3>{{ p.nombre }}</h3>
+        <div class="price">${{ p.precio }}</div>
+        
+        <div class="stock-bar">
+          <div class="fill" [style.width.%]="p.stock"></div>
+        </div>
+        <p class="stock-text">DISPONIBILIDAD: {{ p.stock }} UNIDADES</p>
+      </div>
+
+      <button class="btn-glitch" (click)="adquirir(p.nombre)">
+        ADQUIRIR
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="productos.length === 0" class="loading-state">
+    <div class="radar"></div>
+    <p>RASTREANDO SEÑAL DEL BACKEND...</p>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.auth-box { max-width: 400px; margin: 50px auto; padding: 30px; background: #111; border: 1px solid #00b4ff; }
+.title-neon { color: #00b4ff; text-align: center; margin-bottom: 20px; }
+.field { margin-bottom: 15px; }
+.field label { display: block; font-size: 10px; color: #00b4ff; margin-bottom: 5px; }
+.field input { width: 100%; padding: 10px; background: #000; border: 1px solid #333; color: #fff; }
+.btn-submit { width: 100%; padding: 12px; background: #00b4ff; border: none; font-weight: bold; cursor: pointer; }

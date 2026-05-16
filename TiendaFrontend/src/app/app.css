@@ -1,0 +1,91 @@
+/* ==========================================
+   1. CONFIGURACIÓN GLOBAL Y CUERPO
+   ========================================== */
+:host {
+  display: block;
+  background-color: #050505;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+/* ==========================================
+   2. NAVBAR (DISEÑO PARA COMPUTADORAS)
+   ========================================== */
+.navbar {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, botones a la derecha */
+  align-items: center;
+  padding: 15px 5%;
+  border-bottom: 2px solid #00b4ff;
+  box-shadow: 0 4px 20px rgba(0, 180, 255, 0.2);
+  position: relative;
+  z-index: 100;
+  transition: all 0.3s ease; /* Transición suave al cambiar de tamaño */
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap; /* Evita que el logo se parta en dos líneas */
+}
+
+.logo .cyan {
+  color: #00b4ff;
+  text-shadow: 0 0 10px #00b4ff;
+}
+
+.links {
+  display: flex;
+  gap: 35px;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.links a:hover {
+  color: #00b4ff;
+  text-shadow: 0 0 8px #00b4ff;
+}
+
+.links a.active {
+  color: #00b4ff;
+  border-bottom: 2px solid #00b4ff;
+}
+
+/* ==========================================
+   3. MEDIA QUERY (DISEÑO PARA CELULARES)
+   ========================================== */
+/* Cuando la pantalla mide 768px de ancho o menos (Tablets y Celulares) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Cambia de fila a columna (apila los elementos) */
+    gap: 15px;             /* Añade espacio entre el logo y los botones */
+    padding: 15px 2%;      /* Reduce los márgenes laterales en pantallas chicas */
+    text-align: center;
+  }
+
+  .links {
+    gap: 20px;             /* Reduce el espacio entre botones para que quepan juntos */
+    flex-wrap: wrap;       /* Si el celular es muy viejo/chico, permite que bajen */
+    justify-content: center;
+  }
+
+  .links a {
+    font-size: 0.85rem;    /* Hace la letra un poquitito más pequeña para pantallas de celulares */
+    letter-spacing: 1px;
+  }
+}
